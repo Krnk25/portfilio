@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <style>
+        * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: sans-serif;
+    }
+
+    body {
+      background: #243b55;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      flex-direction: column;
+      padding: 20px;
+    }
+
+    .login-box {
+      width: 100%;
+      max-width: 400px;
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.5);
+      border-radius: 10px;
+      box-shadow: 0 15px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    .login-box h2 {
+      color: #fff;
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .user-box {
+      position: relative;
+      margin-bottom: 30px;
+    }
+
+    .user-box input {
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #fff;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid #fff;
+      outline: none;
+    }
+
+    .user-box label {
+      position: absolute;
+      top: 0;
+      left: 0;
+      padding: 10px 0;
+      font-size: 16px;
+      color: #aaa;
+      pointer-events: none;
+      transition: 0.5s;
+    }
+
+    .user-box input:focus ~ label,
+    .user-box input:valid ~ label {
+      top: -20px;
+      font-size: 12px;
+      color: #03e9f4;
+    }
+
+    a.btn {
+      position: relative;
+      display: inline-block;
+      padding: 10px 20px;
+      color: #03e9f4;
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      text-decoration: none;
+      overflow: hidden;
+      transition: 0.5s;
+      margin-top: 20px;
+    }
+
+    a.btn:hover {
+      background: #f403c4;
+      color: #000;
+      border-radius: 5px;
+      box-shadow: 0 0 5px #b4f403, 0 0 25px #1703f4, 0 0 25px #f40303, 0 0 25px #d003f4;
+    }
+
+    a.btn span {
+      position: absolute;
+      display: block;
+    }
+
+    a.btn span:nth-child(1) {
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #ff0000);
+      animation: anim1 1s linear infinite;
+    }
+
+    a.btn span:nth-child(2) {
+      top: -100%;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(180deg, #00ff00, #0000ff);
+      animation: anim2 1s linear infinite;
+      animation-delay: 0.25s;
+    }
+
+    a.btn span:nth-child(3) {
+      bottom: 0;
+      right: -100%;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(270deg, #ff0000, #0000ff);
+      animation: anim3 1s linear infinite;
+      animation-delay: 0.5s;
+    }
+
+    a.btn span:nth-child(4) {
+      bottom: -100%;
+      left: 0;
+      width: 2px;
+      height: 100%;
+      background: linear-gradient(360deg, #00ff00, #ff00ff);
+      animation: anim4 1s linear infinite;
+      animation-delay: 0.75s;
+    }
+
+    @keyframes anim1 {
+      0% { left: -100%; }
+      50%, 100% { left: 100%; }
+    }
+
+    @keyframes anim2 {
+      0% { top: -100%; }
+      50%, 100% { top: 100%; }
+    }
+
+    @keyframes anim3 {
+      0% { right: -100%; }
+      50%, 100% { right: 100%; }
+    }
+
+    @keyframes anim4 {
+      0% { bottom: -100%; }
+      50%, 100% { bottom: 100%; }
+    }
+
+    .warning-message, .danger-symbol {
+      display: none;
+      color: red;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .danger-symbol {
+      font-size: 40px;
+    }
+
+    .program-selection {
+      display: none;
+      text-align: center;
+      margin-top: 20px;
+      color: white;
+    }
+
+    .program-selection a {
+      display: block;
+      margin: 10px 0;
+      color: #03e9f4;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .program-selection a:hover {
+      color: #f403c4;
+    }
+
+    .warning {
+      animation: blink 0.8s infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { background: transparent; }
+      50% { background: red; }
+    }
+
+    @media (max-width: 480px) {
+      .login-box {
+        padding: 30px 20px;
+      }
+
+      .login-box h2 {
+        font-size: 22px;
+      }
+
+      .user-box input {
+        font-size: 14px;
+      }
+
+      a.btn {
+        font-size: 14px;
+        letter-spacing: 2px;
+      }
+    }
+        </style>
+    </head>
+    <body>
+        <div class="login-box">
+            <h2>Login</h2>
+            <form onsubmit="return chkvalue()">
+                <div class="user-box">
+                    <input type="text" id="username" required>
+                    <label>Username</label>
+                </div>
+                <div class="user-box">
+                    <input type="password" id="password" required>
+                    <label>Password</label>
+                </div>
+                <a href="#" class="btn" onclick="chkvalue(); return false;">
+                    Login
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <div id="warning-message" class="warning-message"></div>
+                <div id="danger-symbol" class="danger-symbol">&#9888;</div>
+            </form>
+        </div>
+        <div class="program-selection" id="program-box">
+            <h2>Select a Program</h2>
+            <a href="#" onclick="verifyPassword('sunmoon.html'); return false">Sunmoon project</a>
+            <a href="#" onclick="verifyPassword('table_ex1_cricket_player_list.html'); return false;">table cricket player list</a>
+            <a href="#" onclick="verifyPassword('prog3.html'); return false;">Program 3</a>
+            <a href="#" onclick="verifyPassword('Loginbox.html'); return false;">Program 4</a>
+            <a href="#" onclick="verifyPassword('program5.html'); return false;">Program 5</a>
+        </div>
+        <script>
+    let attempt = 0;
+    let programAttempt = 0;
+
+    function chkvalue() {
+      const uid = document.getElementById("username").value;
+      const pass = document.getElementById("password").value;
+
+      if (uid === "Admin" && pass === "123456") {
+        alert("Welcome user");
+        document.querySelector(".login-box").style.display = "none";
+        document.getElementById("program-box").style.display = "block";
+      } else {
+        attempt++;
+        const warn = document.getElementById("warning-message");
+        const danger = document.getElementById("danger-symbol");
+        warn.style.display = "block";
+        warn.innerText = attempt < 3
+          ? `Invalid credentials (${attempt} attempt${attempt > 1 ? 's' : ''})`
+          : "3 attempts failed - System locked";
+
+        if (attempt >= 3) {
+          danger.style.display = "block";
+          document.getElementById("username").classList.add("warning");
+          document.getElementById("password").classList.add("warning");
+          const alarm = new Audio('warning-alarm-loop-279206.mp3');
+          alarm.play();
+        }
+      }
+    }
+
+    function verifyPassword(programUrl) {
+      const pass = prompt("Please enter your password:");
+      if (pass === "123456") {
+        window.location.href = programUrl;
+      } else {
+        programAttempt++;
+        if (programAttempt < 3) {
+          alert("Incorrect password.");
+        } else {
+          document.getElementById("warning-message").innerText = "3 attempt fail";
+          document.getElementById("warning-message").style.display = "block";
+          document.getElementById("danger-symbol").style.display = "block";
+          document.getElementById("username").classList.add("warning");
+          document.getElementById("password").classList.add("warning");
+          const alarm = new Audio('warning-alarm-loop-279206.mp3');
+          alarm.play();
+        }
+      }
+    }
+        </script>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

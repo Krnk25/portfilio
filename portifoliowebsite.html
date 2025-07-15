@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="" href="portifolio.css">
+        <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    </head>
+    <body>
+        <header>
+            <div class="logo">🌐 CodeCraft</div>
+            <div class="hamburger" onclick="toggleMenu()">☰</div>
+            <nav class="navbar" id="nav-menu">
+                <ul>
+                    <li class="active">
+                        <a href="#home">Home</a>
+                    </li>
+                    <li>
+                        <a href="#about">About</a>
+                    </li>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>
+                    <li>
+                        <a href="#project">Projects</a>
+                    </li>
+                    <li>
+                        <a href="#contact">Contact</a>
+                    </li>
+                    <a href="logout.php" class="btn btn-danger" name="logout">Logout</a>
+                </ul>
+            </nav>
+        </header>
+        <section class="home">
+            <div class="home-content">
+                <h2 style="color: #fff;">Hello, it's Me</h2>
+                <h1 style="color: #d003f4">Kabade Karan</h1>
+                <h2 style="color: #fff;">
+                    And I'm a
+                    <span class="text" style="font-size: 25px"></span>
+                </h2>
+                <p style="color: #fff;">
+                    A passionate and detail-oriented BSc Computer Science final-year student with
+                    strong foundations in PHP, MySQL, and web development. Seeking a challenging
+                    position as a PHP Developer to apply my coding skills and contribute to building
+                    scalable, user-friendly web applications.
+                </p>
+                <div class="home-sci">
+                    <div class="social-icons">
+                        <a href="https://www.instagram.com/krn_k_25/" style="--i: 5">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://web.whatsapp.com/" style="--i: 6">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.twitter.com" style="--i: 7">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://www.youtube.com" style="--i: 8">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/karan-kabade-6a46b1259?
+                        utm_source=share&utm_campaign=share_via&utm_content=pr
+                        ofile&utm_medium=android_ap" style="--i: 9">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                    </div>
+                </div>
+                <a href="#" class="btn-box">More About Me</a>
+            </div>
+            <script>
+                    document.addEventListener("DOMContentLoaded", function () {
+                    var typed = new Typed(".text", {
+                    strings: [
+                        "SOFTWARE DEVELOPER",
+                        "WEB DEVELOPER",
+                        "FRONTEND DEVELOPER",
+                        "BACKEND DEVELOPER",
+                    ],
+                    typeSpeed: 100,
+                    backSpeed: 60,
+                    loop: true,
+                    });
+                    });
+            </script>
+        </section>
+        <section class="about" id="about">
+            <div class="img-box">
+                <div class="img">
+                    <img src="images/karan.jpeg" alt="About Image">
+                </div>
+            </div>
+            <div class="about-text">
+                <h2>
+                    About
+                    <span>Me</span>
+                </h2>
+                <li>Bsc CS (Bachelor of Science in Computer )</li>
+                <li>Saw.Swarkar Mahavidyalya Beed , 2023 – 2026 (Pursuing, 3rd Year)</li>
+                <li>Dr.Babasaheb Ambedkar Maratwada University Chattrapati Sambhaji Nagar.</li>
+                <br>
+                <h4>My Project</h4>
+                <h3>
+                    📌 Project Title:
+                    <span style="color: aqua;">CodeCraft</span>
+                </h3>
+                <h3>📝 Project Summary:</h3>
+                <li>
+                    CodeCraft is a dynamic portfolio website built to represent my skills, creativity, and personal coding journey. It features a secure login/signup system and a personalized dashboard that showcases a collection of mini projects.
+
+                    Once users log in or sign up, they are redirected to the main portfolio page which includes:
+                    A professional introduction and developer profile
+                    A gallery of mini projects built using HTML, CSS, JavaScript, PHP, and MySQL
+                    Responsive design for seamless use on mobile, tablet, and desktop devices
+                </li>
+                <h6>🔑 Key Features:</h6>
+                <li>🔐 Authentication System: Secure login/signup with session-based access (PHP + MySQL)</li>
+                <li>🏠 Interactive Portfolio: Displays bio, skills, and technology stack</li>
+                <li>
+                    🧩 Mini Projects Section: Real-time demos of small-scale projects
+                </li>
+            </div>
+        </section>
+        <section>
+            <div class="services" id="services">
+                <div class="container">
+                    <h1 class="sub-title">
+                        My
+                        <span>services</span>
+                    </h1>
+                    <div class="services-list">
+                        <div>
+                            <i class="bx bx-code" style="color: #d003f4"></i>
+                            <h2>UI/UX Design</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                quisquam cupiditate nulla autem possimus corporis blanditiis
+                quidem voluptatibus! Nulla at fugit recusandae ullam eum dolorum
+                quod adipisci tempora cum animi!
+                            </p>
+                            <a href="#" class="read">learn more</a>
+                        </div>
+                        <div>
+                            <i class="bx bx-crop" style="color: #d003f4"></i>
+                            <h2>UI/UX Design</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                quisquam cupiditate nulla autem possimus corporis blanditiis
+                quidem voluptatibus! Nulla at fugit recusandae ullam eum dolorum
+                quod adipisci tempora cum animi!
+                            </p>
+                            <a href="#" class="read">learn more</a>
+                        </div>
+                        <div>
+                            <i class="bx bx-apple" style="color: #d003f4"></i>
+                            <h2>UI/UX Design</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                quisquam cupiditate nulla autem possimus corporis blanditiis
+                quidem voluptatibus! Nulla at fugit recusandae ullam eum dolorum
+                quod adipisci tempora cum animi!
+                            </p>
+                            <a href="#" class="read">learn more</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="skills-section" id="skills">
+            <h2 class="skills-title">
+                My
+                <span>Skills</span>
+            </h2>
+            <div class="skill-containers">
+                <!-- Technical Skills -->
+                <div class="container1">
+                    <h1 class="heading1">Technical Skills</h1>
+                    <div class="Technical-bars">
+                        <div class="bar">
+                            <div class="info">
+                                <span>HTML - 90%</span>
+                            </div>
+                            <div class="progress-line html">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="info">
+                                <span>CSS - 87%</span>
+                            </div>
+                            <div class="progress-line css">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="info">
+                                <span>JavaScript - 70%</span>
+                            </div>
+                            <div class="progress-line javascript">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="info">
+                                <span>PHP - 60%</span>
+                            </div>
+                            <div class="progress-line php">
+                                <span></span>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <div class="info">
+                                <span>MySQL - 75%</span>
+                            </div>
+                            <div class="progress-line mysql">
+                                <span></span>
+                            </div>
+                            <div class="bar">
+                                <div class="info">
+                                    <span>Python - 80%</span>
+                                </div>
+                                <div class="progress-line python">
+                                    <span></span>
+                                </div>
+                            </div>
+                            <div class="bar">
+                                <div class="info">
+                                    <span>Java - 85%</span>
+                                </div>
+                                <div class="progress-line java">
+                                    <span></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Professional Skills -->
+                <div class="container2">
+                    <h1 class="heading">Professional Skills</h1>
+                    <div class="radial-bars">
+                        <div class="radial-bar">
+                            <svg viewBox="0 0 200 200">
+                                <circle
+                                    class="progress-bar"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                ></circle>
+                                <circle
+                                    class="path"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                    style="--dash-offset: 50;"
+                                ></circle>
+                            </svg>
+                            <div class="percentage">90%</div>
+                            <div class="textt">Creativity</div>
+                        </div>
+                        <div class="radial-bar">
+                            <svg viewBox="0 0 200 200">
+                                <circle
+                                    class="progress-bar"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                ></circle>
+                                <circle
+                                    class="path"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                    style="--dash-offset: 125;"
+                                ></circle>
+                            </svg>
+                            <div class="percentage">75%</div>
+                            <div class="textt">Problem Solving</div>
+                        </div>
+                        <div class="radial-bar">
+                            <svg viewBox="0 0 200 200">
+                                <circle
+                                    class="progress-bar"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                ></circle>
+                                <circle
+                                    class="path"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                    style="--dash-offset: 100;"
+                                ></circle>
+                            </svg>
+                            <div class="percentage">80%</div>
+                            <div class="textt">Communication</div>
+                        </div>
+                        <div class="radial-bar">
+                            <svg viewBox="0 0 200 200">
+                                <circle
+                                    class="progress-bar"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                ></circle>
+                                <circle
+                                    class="path"
+                                    cx="100"
+                                    cy="100"
+                                    r="80"
+                                    style="--dash-offset: 75;"
+                                ></circle>
+                            </svg>
+                            <div class="percentage">85%</div>
+                            <div class="textt">Teamwork</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section>
+            <div class="project" id="project">
+                <div class="main-text">
+                    <h2>
+                        Latest
+                        <span>Projects</span>
+                    </h2>
+                </div>
+                <div class="portfolio-content">
+                    <div class="row" style="padding: 30px;">
+                        <img src="images/webimage.jpg" alt="Project 2" style="height: 300px; width: 400px">
+                        <div class="layer">
+                            <li style="font-size: 17px;">ShopX – A Modern E-Commerce Platform</li>
+                            <p style="font-size: 15px;">
+                                ShopX is a feature-rich, responsive e-commerce web application inspired by industry leaders like Amazon and Flipkart. Designed for seamless user experience and modern design standards, ShopX brings together both aesthetics and functionality in one powerful online shopping platform.
+                            </p>
+                            <a href="shopXproject/project1.html">
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="padding: 30px;">
+                        <img
+                            src="images/graphicsimage.jpg"
+                            alt="Project 3"
+                            height="300px"
+                            width="400px"
+                            style="height: 300px; width: 400px"
+                        >
+                        <div class="layer">
+                            <h5 style="font-size: 17px;">Virtual marketplace</h5>
+                            <p style="font-size: 15px;">
+                                The Virtual Marketplace is an online shopping platform designed to work like Flipkart. It allows users to browse products, add them to a cart, and place orders online.
+                        This project uses HTML, CSS, JavaScript, and PHP to deliver a responsive, interactive, and fully functional e-commerce experience.
+                            </p>
+                            <a href="virtual_marketplace/index.html">
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="row" style="padding: 30px;">
+                        <img src="images/uxdesigne.jpg" alt="Project 1" style="height: 300px; width: 400px">
+                        <div class="layer">
+                            <li style="font-size: 17px;">Smart Form Validator</li>
+                            <p style="font-size: 15px;">The Form Validation Project is a fully responsive and interactive form handling system designed to validate user input in real-time. This project demonstrates your JavaScript DOM manipulation, error messaging, and user-friendly UX design skills.</p>
+                            <a href="formvalidation/Loginbox.html">
+                                <i class="fa fa-external-link" aria-hidden="true"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="contact" id="contact">
+            <div class="contact-text">
+                <h2 style="color: #fff;">
+                    Contact
+                    <span>Me</span>
+                </h2>
+                <h4>Let's Work Together</h4>
+                <p></p>
+                <ul class="contact-list" style="color: #fff;">
+                    <li>
+                        <i class="bx bxs-send"></i>
+                        ✉ karankabade7@gmail.com
+                    </li>
+                    <li>
+                        <i class="bx bxl-phone"></i>
+                        📞91+ 8265044456
+                    </li>
+                    <li>
+                        📍
+ Beed,Maharatra
+                    </li>
+                </ul>
+                <div class="home-sci">
+                    <a href="https://www.instagram.com" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/1234567890" target="_blank">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://www.twitter.com" target="_blank">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                    <a href=" https://www.linkedin.com/in/karan-kabade-6a46b1259?
+ utm_source=share&utm_campaign=share_via&utm_content=pr
+ ofile&utm_medium=android_ap" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form action="">
+                    <input type="text" placeholder="Enter Your Name" required>
+                    <input type="email" placeholder="Enter Your Email" required>
+                    <input type="text" placeholder="Enter Your Subject">
+                    <textarea placeholder="Enter Your Message"></textarea>
+                    <input type="submit" value="Submit" class="send">
+                </form>
+            </div>
+        </section>
+        <div class="last-text">
+            <p>Developed  by karan kabade 2025</p>
+            <a href="#" class="top">
+                <i class="fas fa-arrow-up"></i>
+            </a>
+        </div>
+        <script src="script.js"></script>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>

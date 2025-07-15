@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" href="project1.css">
+    </head>
+    <body>
+        <header>
+            <div class="header">
+                <a href="#" class="logo">
+                    <i class="fa-brands fa-shopify"></i>
+                    ShopX
+                </a>
+                <div class="location">
+                    <i class="fa-solid fa-location-dot" style="color: red;"></i>
+                    <span style="margin-left: 6px;">
+                        Deliver to
+                        <br>
+                        India
+                    </span>
+                </div>
+                <div class="search-bar">
+                    <select>
+                        <option>All</option>
+                        <option>Fashion</option>
+                        <option>Electronics</option>
+                        <option>Books</option>
+                    </select>
+                    <input type="text" placeholder="Search ShopX.in">
+                    <button>
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                </div>
+                <div class="nav-options">
+                    <div class="nav-item" onmouseenter="toggleDropdown('accountDropdown')" onmouseleave="toggleDropdown('')">
+                        <div class="itemhover">
+                            <i class="fas fa-user"></i>
+                            <br>
+                            Account & Lists
+                        </div>
+                        <div class="dropdown" id="accountDropdown">
+                            <h4>
+                                New customer?
+                                <a href="#">Start here.</a>
+                            </h4>
+                            <hr>
+                            <h4>Your Lists</h4>
+                            <a href="#">Wish List</a>
+                            <a href="#">Baby Wishlist</a>
+                            <hr>
+                            <h4>Your Account</h4>
+                            <a href="#">Orders</a>
+                            <a href="#">Recommendations</a>
+                        </div>
+                    </div>
+                    <div class="nav-item" onmouseenter="toggleDropdown('accountDropdown')" onmouseleave="toggleDropdown('')">
+                        <div class="itemhover">
+                            <i class="fas fa-clipboard-list"></i>
+                            <br>
+                            Orders
+                        </div>
+                        <div class="dropdown" id="ordersDropdown">
+                            <h4>Your Orders</h4>
+                            <a href="#">Track or return</a>
+                            <hr>
+                            <a href="#">Order history</a>
+                        </div>
+                    </div>
+                    <div class="cart" onclick="toggleDropdown('cartDropdown')">
+                        <div class="itemhover">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                            <br>
+                            Cart
+                        </div>
+                        <div class="cart-dropdown" id="cartDropdown">
+                            <p>Your Cart is empty</p>
+                            <button>View Cart</button>
+                            <button>Checkout</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <div class="panel-all" onclick="toggleCategoryDropdown()">
+                    <i class="fas fa-bars"></i>
+                    <span style="margin-left: 10px;">Browse Categories</span>
+                    <div class="dropdown-content" id="dropdownMenu">
+                        <h4>Trending</h4>
+                        <ul>
+                            <li>Bestsellers</li>
+                            <li>New Releases</li>
+                            <li>Movers and Shakers</li>
+                        </ul>
+                        <h4>Digital Content & Devices</h4>
+                        <ul>
+                            <li>Echo & Alexa</li>
+                            <li>Fire TV</li>
+                            <li>Kindle & eBooks</li>
+                            <li>Audible Audiobooks</li>
+                            <li>Prime Video</li>
+                            <li>Prime Music</li>
+                        </ul>
+                        <h4>Shop by Category</h4>
+                        <ul>
+                            <li>Mobiles, Computers</li>
+                            <li>TV, Electronics</li>
+                            <li>Men's Fashion</li>
+                            <li>Women's Fashion</li>
+                            <li>See all</li>
+                        </ul>
+                        <h4>Programs & Features</h4>
+                        <ul>
+                            <li>Amazon Pay</li>
+                            <li>Gift Cards & Recharges</li>
+                            <li>Amazon Launchpad</li>
+                            <li>Amazon Business</li>
+                        </ul>
+                        <h4>Help & Settings</h4>
+                        <ul>
+                            <li>Your Account</li>
+                            <li>Customer Service</li>
+                            <li>Sign in</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="panel-ops">
+                    <a href="#">
+                        <p>Mx Player</p>
+                    </a>
+                    <a href="#">
+                        <p>Sell</p>
+                    </a>
+                    <a href="#">
+                        <p>Bestsellers</p>
+                    </a>
+                    <a href="#">
+                        <p>Mobiles</p>
+                    </a>
+                    <a href="#">
+                        <p>Deals</p>
+                    </a>
+                    <a href="#">
+                        <p>Prime</p>
+                    </a>
+                    <a href="#">
+                        <p>Service</p>
+                    </a>
+                    <a href="#">
+                        <p>Fashion</p>
+                    </a>
+                    <a href="#">
+                        <p>Releases</p>
+                    </a>
+                    <a href="#">
+                        <p>Pay</p>
+                    </a>
+                    <a href="#">
+                        <p>Electronics</p>
+                    </a>
+                    <a href="#">
+                        <p>Kitchen</p>
+                    </a>
+                    <a href="#">
+                        <p>Bike</p>
+                    </a>
+                    <a href="#">
+                        <p>Books</p>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <!-- ---------- SLIDER ---------- -->
+        <div class="slider-container">
+            <div class="slider" id="slider">
+                <img src="image/amazonimg2.jpg" class="slide" alt="Slide 1">
+                <img src="image/amazonic3.jpg" class="slide" alt="Slide 2">
+                <img src="image/amazonic4.jpg" class="slide" alt="Slide 3">
+                <img src="image/amazonic6.png" class="slide" alt="Slide 4">
+                <img src="image/amazoic5.jpg" class="slide" alt="Slide 5">
+            </div>
+            <button class="prev" type="button" onclick="moveSlide(-1)">
+                <i class="fa fa-chevron-left"></i>
+            </button>
+            <button class="next" type="button" onclick="moveSlide(1)">
+                <i class="fa fa-chevron-right"></i>
+            </button>
+        </div>
+        <script>
+let currentSlide = 0;
+
+function showSlide(index) {
+    const slides = document.querySelectorAll('.slider .slide');
+    if (slides.length === 0) return;
+    if (index >= slides.length) currentSlide = 0;
+    else if (index < 0) currentSlide = slides.length - 1;
+    else currentSlide = index;
+
+    slides.forEach((slide, i) => {
+        slide.style.display = (i === currentSlide) ? 'block' : 'none';
+    });
+}
+
+function moveSlide(step) {
+    showSlide(currentSlide + step);
+}
+
+// Initialize slider after DOM is loaded
+document.addEventListener('DOMContentLoaded', function () {
+    showSlide(0);
+
+    // Auto slide every 3 seconds
+    setInterval(function() {
+        moveSlide(1);
+    }, 3000); // 3000 ms = 3 seconds
+});
+        </script>
+        <!-- a-spacing-none-showgun-widget -->
+        <section class="x99_wrapper">
+            <div class="grid_q1w2e3">
+                <div class="bx_abc_xyz">
+                    <img src="image/watch1.webp" alt="Product 1">
+                    <h4>Watch</h4>
+                </div>
+                <div class="bx_abc_xyz">
+                    <img src="image/applem.webp" alt="Product 2">
+                    <h4>I phone</h4>
+                </div>
+                <div class="bx_abc_xyz">
+                    <img src="image/toy.webp" alt="Product 3">
+                    <h4>Toy</h4>
+                </div>
+                <div class="bx_abc_xyz">
+                    <img src="image/flipfa.webp" alt="Product 4">
+                    <h4>Flipflop</h4>
+                </div>
+                <div class="bx_abc_xyz">
+                    <img src="image/laptop.webp" alt="Product 6">
+                    <h4>Laptop</h4>
+                </div>
+            </div>
+        </section>
+        <!-- container -->
+        <section>
+            <div class="container">
+                <!-- CARD 1 -->
+                <div class="card">
+                    <h3>Beauty and Wellness</h3>
+                    <div class="grid-2x2">
+                        <a href="#">
+                            <img src="image/dryfruit.webp" alt="">
+                            <span>Nature Aahar Mix Dry</span>
+                            <span class="discount">Min. 50% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/teapowder.webp" alt="">
+                            <span>Tea Powder</span>
+                            <span class="discount">Min. 50% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/namkin.webp" alt="">
+                            <span>Namkeen</span>
+                            <span class="discount">Min. 50% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/badam.webp" alt="">
+                            <span>Dry Fruits</span>
+                            <span class="discount">Min. 50% Off</span>
+                        </a>
+                    </div>
+                    <div class="see-more">See more</div>
+                </div>
+                <!-- CARD 2 -->
+                <div class="card">
+                    <h3>Fashion Top Deals</h3>
+                    <div class="grid-2x2">
+                        <a href="#">
+                            <img src="image/messlipper.webp" alt="">
+                            <span>Men's Slippers</span>
+                            <span class="discount">Min. 35% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/mensboxers.webp" alt="">
+                            <span>Men's Boxers</span>
+                            <span class="discount">Min. 35% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/mensshoes.webp" alt="">
+                            <span>Men's Shoes</span>
+                            <span class="discount">Min. 35% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/backpack.webp" alt="">
+                            <span>Backpacks</span>
+                            <span class="discount">Min. 35% Off</span>
+                        </a>
+                    </div>
+                    <div class="see-more">See all deals</div>
+                </div>
+                <!-- CARD 3 -->
+                <div class="card">
+                    <h3>Trending Gadgets & Appliance</h3>
+                    <div class="grid-2x2">
+                        <a href="#">
+                            <img src="image/aircooler.webp" alt="">
+                            <span>Air Cooler</span>
+                            <span class="discount">Min. 60% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/camera.webp" alt="">
+                            <span>Cameras</span>
+                            <span class="discount">Min. 50% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/fan.webp" alt="">
+                            <span>Fans</span>
+                            <span class="discount">Min. 60% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/speaker.webp" alt="">
+                            <span>Smart Speakers</span>
+                            <span class="discount">Min. 60% Off</span>
+                        </a>
+                    </div>
+                    <div class="see-more">Explore all</div>
+                </div>
+                <!-- CARD 4 -->
+                <div class="card">
+                    <h3>Top Tech Picks</h3>
+                    <div class="grid-2x2">
+                        <a href="#">
+                            <img src="image/moque.webp" alt="">
+                            <span>Mosquito Nets</span>
+                            <span class="discount">Min. 30% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/collpisil.webp" alt="">
+                            <span>Collapsible Wardrobes</span>
+                            <span class="discount">Min. 30% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/shoerack.webp" alt="">
+                            <span>Shoe Rack</span>
+                            <span class="discount">Min. 30% Off</span>
+                        </a>
+                        <a href="#">
+                            <img src="image/blanket.webp" alt="">
+                            <span>Blankets</span>
+                            <span class="discount">Min. 30% Off</span>
+                        </a>
+                    </div>
+                    <div class="see-more "> View more</div>
+                </div>
+            </div>
+        </section>
+        <!-- shop section -->
+        <section class="shop-section">
+            <h2>
+                <a href="#" style="color: #000">
+                    All models.
+                    <span style="color: #333;">Budget Add-Ons.</span>
+                </a>
+            </h2>
+            <div class="product-scroll-container">
+                <!-- PRODUCT 1 -->
+                <div class="product-card">
+                    <div class="badge">🎓</div>
+                    <a href="#">
+                        <img src="image/watch1.webp" alt="">
+                    </a>
+                    <h3>LOUIS DEVIN</h3>
+                    <div class="price">₹499 – FREE delivery Thursday</div>
+                    <a href="#" class="buy-button">Buy</a>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <!-- PRODUCT 2 -->
+                <div class="product-card">
+                    <div class="badge">🎓</div>
+                    <a href="#">
+                        <img src="image/mouse1.jpg" alt="">
+                    </a>
+                    <h3>Razer Naga V2 Pro Mouse</h3>
+                    <div class="price">38% off – ₹19,882 (M.R.P. ₹31,990)</div>
+                    <a href="#" class="buy-button">Buy</a>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <!-- PRODUCT 3 -->
+                <div class="product-card">
+                    <div class="badge">🎓</div>
+                    <a href="#">
+                        <img src="image/ldress1.jpg" alt="">
+                    </a>
+                    <h3>Women's Shirt</h3>
+                    <div class="price">-80% ₹2500 (M.R.P. ₹12,500)</div>
+                    <a href="#" class="buy-button">Buy</a>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <!-- PRODUCT 4 -->
+                <div class="product-card">
+                    <div class="badge">🎓</div>
+                    <a href="#">
+                        <img src="image/laptop1.jpg" alt="">
+                    </a>
+                    <h3>ASUS TUF Gaming F15</h3>
+                    <div class="price">-24% ₹1,04,990 – RTX 4060</div>
+                    <a href="#" class="buy-button">Buy</a>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <!-- PRODUCT 5 -->
+                <div class="product-card">
+                    <div class="badge">🎓</div>
+                    <a href="#">
+                        <img src="image/samsung1.jpg" alt="">
+                    </a>
+                    <h3>Samsung Galaxy S25 Ultra</h3>
+                    <div class="price">100% ₹0 (M.R.P. ₹1,41,999)  special one satish sir</div>
+                    <a href="#" class="buy-button">Buy</a>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+                <!-- PRODUCT 6 -->
+                <div class="product-card">
+                    <div class="badge">🎓</div>
+                    <a href="#">
+                        <img src="image/braslate1.jpg" alt="">
+                    </a>
+                    <h3>Rose Gold Bracelet</h3>
+                    <div class="price">-80% ₹999 (M.R.P. ₹4,925)</div>
+                    <a href="#" class="buy-button">Buy</a>
+                    <div class="dots">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- slider wrapper -->
+        <section>
+            <div class="slider-wrapper">
+                <div class="slider-title">More items to consider</div>
+                <!-- Arrows -->
+                <button class="arrow-btn prev-btn" id="prevBtn">
+                    <i class="fa fa-chevron-left"></i>
+                </button>
+                <div class="product-container" id="productSlider">
+                    <!-- Products -->
+                    <div class="product">
+                        <img src="image/lediesd2.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies3.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies4.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/lediesd5.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies6.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies7.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies8.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies10.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/lediesd1.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies11.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/lediesd12.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies13.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies14.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies15.jpg" alt="">
+                    </div>
+                    <div class="product">
+                        <img src="image/ledies17.jpg" alt="">
+                    </div>
+                </div>
+                <button class="arrow-btn next-btn" id="nextBtn">
+                    <i class="fa fa-chevron-right"></i>
+                </button>
+            </div>
+        </section>
+        <h2 class="section-title">Jewellery</h2>
+        <div class="product-scroll">
+            <!-- Product 1 -->
+            <div class="product-img2">
+                <img src="image/br1.jpg" alt="Peora Silver" loading="lazy">
+                <div class="product-title">Peora Silver Plated Cubic Zirconia Studded Charm Bracelet Stylish Fashion Jewellery Gift</div>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+            <!-- Product 2 -->
+            <div class="product-img2">
+                <img src="image/br2.jpg" alt="Peora Rose Gold" loading="lazy">
+                <div class="product-title">Peora Rose Gold Plated Cubic Zirconia Studded Charm Bracelet Stylish Jewellery Gift</div>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+            <!-- Product 3 -->
+            <div class="product-img2">
+                <img src="image/br3.jpg" alt="RoiDes Name" loading="lazy">
+                <div class="product-title">RoiDes Arts Customized Name Bracelet Gift for Loved Ones and Personal Use</div>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+            <!-- Product 4 -->
+            <div class="product-img2">
+                <img src="image/br4.jpg" alt="Peora Synthetic" loading="lazy">
+                <div class="product-title">Peora Synthetic Stone Studded Gold Plated Charm Bracelet Fashion Adjustable Jewellery</div>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+            <!-- Product 5 -->
+            <div class="product-img2">
+                <img src="image/br5.jpg" alt="YouBella Blue" loading="lazy">
+                <div class="product-title">YouBella Jewellery Silver Plated Stylish Crystal Bracelet Bangle for Girls & Women (Blue)</div>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+            <!-- Product 6 -->
+            <div class="product-img2">
+                <img src="image/br6.jpg" alt="Zaveri Multi" loading="lazy">
+                <div class="product-title">ZAVERI PEARLS Multi-Color Silver Artificial Stones Embellished Kada Bracelets For Women</div>
+                <button class="btn-shop">Shop Now</button>
+            </div>
+        </div>
+        <!--  -->
+        <footer class="footer">
+            <div class="footer-top">Back to top</div>
+            <div class="footer-main">
+                <div class="footer-column">
+                    <h4>Get to Know Us</h4>
+                    <ul>
+                        <li>About ShopX</li>
+                        <li>Careers</li>
+                        <li>Press Releases</li>
+                        <li>Amazon Science</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Connect with Us</h4>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Make Money with Us</h4>
+                    <ul>
+                        <li>Sell on Amazon</li>
+                        <li>Amazon Accelerator</li>
+                        <li>Global Selling</li>
+                        <li>Affiliate Program</li>
+                        <li>Advertise Your Products</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Let Us Help You</h4>
+                    <ul>
+                        <li>Your Account</li>
+                        <li>Returns Centre</li>
+                        <li>100% Purchase Protection</li>
+                        <li>Amazon App Download</li>
+                        <li>Help</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 
+ -->
+            <!-- Partner Services Section -->
+            <div class="footer-partners">
+                <div class="partner-item">
+                    <strong>AbeBooks</strong>
+                    <br>
+                    Books, art & collectibles
+                </div>
+                <div class="partner-item">
+                    <strong>ShopX Web Services</strong>
+                    <br>
+                    Scalable Cloud Computing Services
+                </div>
+                <div class="partner-item">
+                    <strong>Audible</strong>
+                    <br>
+                    Download Audio Books
+                </div>
+                <div class="partner-item">
+                    <strong>IMDb</strong>
+                    <br>
+                    Movies, TV & Celebrities
+                </div>
+                <div class="partner-item">
+                    <strong>Shopbop</strong>
+                    <br>
+                    Designer Fashion Brands
+                </div>
+                <div class="partner-item">
+                    <strong>ShopX Business</strong>
+                    <br>
+                    Everything For Your Business
+                </div>
+                <div class="partner-item">
+                    <strong>Prime Now</strong>
+                    <br>
+                    2-Hour Delivery on Everyday Items
+                </div>
+                <div class="partner-item">
+                    <strong>ShopXPrime Music</strong>
+                    <br>
+                    100 million songs, ad-free
+                    <br>
+                    Over 15 million podcast episodes
+                </div>
+            </div>
+            <!-- Bottom Links -->
+            <div class="footer-bottom">
+                <div class="footer-links">
+                    <a href="#">Conditions of Use & Sale</a>
+                    <a href="#">Privacy Notice</a>
+                    <a href="#">Interest-Based Ads</a>
+                </div>
+                <p>© 2024–2025,ShopX.com, Inc. or its affiliates</p>
+            </div>
+        </footer>
+        <script src="project1.js"></script>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </body>
+</html>
