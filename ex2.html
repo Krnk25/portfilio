@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile Upload</title>
+        <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #0f172a;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Outer Glowing Circle */
+    .img-box {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .img-box::before,
+    .img-box::after {
+      content: '';
+      position: absolute;
+      top: -5px;
+      left: -5px;
+      width: calc(100% + 10px);
+      height: calc(100% + 10px);
+      border-radius: 50%;
+      background: conic-gradient(transparent, transparent, transparent, #2bff00, #d003f4, #1703f4, #f40303);
+      animation: rotate-border 6s linear infinite;
+      z-index: 0;
+    }
+    .img-box::after {
+      animation-delay: -3s;
+    }
+    .img-box:hover{
+    
+    }
+
+    @keyframes rotate-border {
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Avatar wrapper inside glowing circle */
+    .avatar-wrapper {
+      position: relative;
+      width: 230px;
+      height: 230px;
+      border-radius: 50%;
+      overflow: hidden;
+      z-index: 1;
+      background: #fff;
+    }
+
+    .avatar-wrapper img.avatar {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Upload Icon */
+    .avatar-wrapper .upload-icon {
+      position: absolute;
+      bottom: 10px;
+      right: 30px;
+      background: #6a82fb;
+      color: #fff;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 20px;
+      cursor: pointer;
+      border: 2px solid #fff;
+      box-shadow: 0 0 10px #0ff, 0 0 20px #f0f;
+      transition: 0.3s;
+    }
+
+    .upload-icon:hover {
+      transform: scale(1.1);
+      background: #00c6ff;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .btn-submit {
+      margin-top: 20px;
+      padding: 10px 25px;
+      background: #0ef;
+      color: #000;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+    .btn-submit:hover {
+      background: #00c6ff;
+      color: #fff;
+    }
+        </style>
+    </head>
+    <body>
+        <form action="upload.php" method="POST" enctype="multipart/form-data">
+            <div class="img-box">
+                <div class="avatar-wrapper">
+                    <!-- Default / Current Image -->
+                    <img
+                        src="uploads/default.png"
+                        alt="Profile Image"
+                        class="avatar"
+                        id="profile-pic"
+                    >
+                    <!-- Upload Button -->
+                    <label for="file-upload" class="upload-icon">📷</label>
+                    <input
+                        type="file"
+                        id="file-upload"
+                        name="photo"
+                        accept="image/*"
+                        onchange="previewImage(event)"
+                    >
+                </div>
+            </div>
+            <div style="text-align:center;">
+                <button type="submit" class="btn-submit">Update Photo</button>
+            </div>
+        </form>
+        <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function(){
+        document.getElementById("profile-pic").src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+        </script>
+    </body>
+</html>

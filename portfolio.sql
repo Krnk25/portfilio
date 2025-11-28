@@ -1,0 +1,15 @@
+-- Create Database
+CREATE DATABASE IF NOT EXISTS portfolio;
+
+-- Use Database
+USE portfolio;
+
+-- Create Table
+CREATE TABLE IF NOT EXISTS user (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    username VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);

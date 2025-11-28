@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Virtual Marketplace - Home</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+        <style>
+    /* ===== GLOBAL ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      color: #333;
+      overflow-x: hidden;
+      background: radial-gradient(circle at top left, #e5e0ff, #f2f4ff, #fff);
+      animation: bgMove 10s ease-in-out infinite alternate;
+    }
+
+    @keyframes bgMove {
+      0% { background-position: 0% 50%; }
+      100% { background-position: 100% 50%; }
+    }
+
+    /* ===== NAVBAR ===== */
+    .navbar {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(15px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      box-shadow: 0 4px 30px rgba(111, 66, 193, 0.1);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: #6f42c1 !important;
+      text-shadow: 0 0 10px rgba(111, 66, 193, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .navbar-brand:hover {
+      color: #007bff !important;
+      transform: scale(1.05);
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #333 !important;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      margin: 0 10px;
+    }
+
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 3px;
+      border-radius: 2px;
+      background: linear-gradient(90deg, #6f42c1, #007bff);
+      transition: width 0.3s;
+    }
+
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    .nav-link:hover {
+      color: #6f42c1 !important;
+      transform: translateY(-3px);
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      overflow: hidden;
+      color: #fff;
+      background: linear-gradient(135deg, #6f42c1, #007bff, #8a2be2);
+      background-size: 300% 300%;
+      animation: gradientMove 8s ease infinite;
+    }
+
+    @keyframes gradientMove {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+      text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+      animation: fadeDown 1s ease;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      animation: fadeUp 1.2s ease;
+    }
+
+    @keyframes fadeDown {
+      from { transform: translateY(-50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { transform: translateY(50px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    .btn-glow {
+      margin-top: 25px;
+      padding: 14px 40px;
+      border-radius: 50px;
+      font-weight: 600;
+      text-decoration:none;
+      border: none;
+      background: linear-gradient(90deg, #fff, #e6e6ff);
+      color: #6f42c1;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 20px rgba(255,255,255,0.7);
+    }
+
+    .btn-glow:hover {
+      transform: scale(1.08);
+      box-shadow: 0 0 40px rgba(255,255,255,0.9), 0 0 20px rgba(111,66,193,0.7);
+      color: #007bff;
+      background: #fff;
+    }
+
+    /* Floating Glow Bubbles */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.15);
+      animation: float 10s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-60px); }
+    }
+
+    .bubble:nth-child(1) { width: 150px; height: 150px; top: 10%; left: 10%; animation-delay: 0s; }
+    .bubble:nth-child(2) { width: 100px; height: 100px; bottom: 10%; right: 15%; animation-delay: 2s; }
+    .bubble:nth-child(3) { width: 200px; height: 200px; top: 30%; right: 10%; animation-delay: 4s; }
+
+    /* ===== FEATURED PRODUCTS ===== */
+    .products {
+      padding: 80px 0;
+      background: linear-gradient(180deg, #ffffff, #f6f8ff);
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 50px;
+      font-weight: 700;
+      font-size: 2.3rem;
+      color: #333;
+      position: relative;
+    }
+
+    .section-title::after {
+      content: "";
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 90px;
+      height: 3px;
+      border-radius: 3px;
+      background: linear-gradient(90deg, #6f42c1, #007bff);
+    }
+
+    .card {
+      border: none;
+      border-radius: 20px;
+      overflow: hidden;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(15px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      transition: all 0.4s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 45px rgba(111, 66, 193, 0.3);
+    }
+
+    .card img {
+      height: 250px;
+      object-fit: cover;
+      transition: all 0.4s ease;
+    }
+
+    .card:hover img {
+      transform: scale(1.1);
+    }
+
+    .card-body h5 {
+      font-weight: 600;
+      color: #333;
+    }
+
+    .price {
+      color: #6f42c1;
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+
+    .btn-outline-primary {
+      border: 2px solid #6f42c1;
+      color: #6f42c1;
+      transition: 0.3s;
+    }
+
+    .btn-outline-primary:hover {
+      background: linear-gradient(90deg, #6f42c1, #007bff);
+      color: #fff;
+      box-shadow: 0 0 15px rgba(111,66,193,0.4);
+      border: none;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: linear-gradient(135deg, #6f42c1, #007bff);
+      color: #fff;
+      text-align: center;
+      padding: 40px 0 20px;
+      position: relative;
+    }
+
+    footer h5 {
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    footer a:hover {
+      text-shadow: 0 0 10px #fff;
+      transform: scale(1.1);
+    }
+
+    footer .social-icons i {
+      font-size: 22px;
+      margin: 0 8px;
+      transition: 0.3s;
+    }
+
+    footer .social-icons i:hover {
+      transform: scale(1.2);
+      color: #ffe600;
+    }
+        </style>
+    </head>
+    <body>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg sticky-top">
+            <div class="container">
+                <a class="navbar-brand" href="#">Virtual Marketplace</a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNav"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="product.php">Products</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="cart.php">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="my_account.php">My Account</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <div class="bubble"></div>
+            <h1>Welcome to Virtual Marketplace</h1>
+            <p>Shop premium products with trust and convenience</p>
+            <a href="product.php" class="btn-glow">Explore Products</a>
+        </section>
+        <!-- Featured Products -->
+        <section class="products">
+            <div class="container">
+                <h2 class="section-title">Featured Products</h2>
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <img src="https://via.placeholder.com/300x250" alt="Product 1">
+                            <div class="card-body">
+                                <h5>Smart Headphones</h5>
+                                <p class="price">₹2,999</p>
+                                <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <img src="https://via.placeholder.com/300x250" alt="Product 2">
+                            <div class="card-body">
+                                <h5>Bluetooth Speaker</h5>
+                                <p class="price">₹1,499</p>
+                                <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card text-center">
+                            <img src="https://via.placeholder.com/300x250" alt="Product 3">
+                            <div class="card-body">
+                                <h5>Smartwatch Pro</h5>
+                                <p class="price">₹3,499</p>
+                                <a href="#" class="btn btn-outline-primary rounded-pill">Add to Cart</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Footer -->
+        <footer>
+            <div class="container">
+                <h5>Virtual Marketplace</h5>
+                <p>© 2025 All Rights Reserved | Designed with 💙 by Karan Kabade</p>
+                <div class="social-icons">
+                    <a href="#">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-twitter"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="#">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.js"></script>
+    </body>
+</html>

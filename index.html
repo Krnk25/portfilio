@@ -1,13 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="">
     <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Fixed Header Example</title>
-        <link rel="stylesheet " type="" href="portifolio.css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Title Page</title>
+        <!-- Bootstrap CSS -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.3/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+        <link rel="stylesheet" type="" href="portifolio.css">
         <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-        <style></style>
     </head>
     <body>
         <header>
@@ -25,34 +33,27 @@
                         <a href="#services">Services</a>
                     </li>
                     <li>
-                        <a href="#skills">Skills</a>
-                    </li>
-                    <li>
                         <a href="#project">Projects</a>
                     </li>
                     <li>
                         <a href="#contact">Contact</a>
                     </li>
-                    <a href="logout.php" class="btn" name="logout">Logout</a>
+                    <a href="logout.php" class="btn btn-danger" name="logout">Logout</a>
                 </ul>
             </nav>
-            <script>function toggleMenu() {
-      document.getElementById("nav-menu").classList.toggle("active");
-    }
-            </script>
         </header>
-        <section class="home" id="home">
+        <section class="home">
             <div class="home-content">
-                <h2>Hello, it's Me</h2>
-                <h1>Kabade Karan</h1>
-                <h2>
+                <h2 style="color: #fff;">Hello, it's Me</h2>
+                <h1 style="color: #d003f4">Kabade Karan</h1>
+                <h2 style="color: #fff;">
                     And I'm a
                     <span class="text" style="font-size: 25px"></span>
                 </h2>
-                <p>
+                <p style="color: #fff;">
                     A passionate and detail-oriented BSc Computer Science final-year student with
-                    strong foundations web development. Seeking a challenging
-                    position as a Web Developer to apply my coding skills and contribute to building
+                    strong foundations in PHP, MySQL, and web development. Seeking a challenging
+                    position as a PHP Developer to apply my coding skills and contribute to building
                     scalable, user-friendly web applications.
                 </p>
                 <div class="home-sci">
@@ -95,40 +96,11 @@
             </script>
         </section>
         <section class="about" id="about">
-            <form action="upload-photo.php" method="POST" enctype="multipart/form-data">
-                <div class="img-box">
-                    <div class="avatar-wrapper">
-                        <!-- Default / Current Image -->
-                        <img
-                            src="uploads/default.png"
-                            alt="Profile Image"
-                            class="avatar"
-                            id="profile-pic"
-                        >
-                        <!-- Upload Button -->
-                        <label for="file-upload" class="upload-icon">📷</label>
-                        <input
-                            type="file"
-                            id="file-upload"
-                            name="photo"
-                            accept="image/*"
-                            onchange="previewImage(event)"
-                        >
-                    </div>
+            <div class="img-box">
+                <div class="img">
+                    <img src="images/karan.jpeg" alt="About Image">
                 </div>
-                <div style="text-align:center;">
-                    <button type="submit" class="btn-submit">Update Photo</button>
-                </div>
-            </form>
-            <script>
-    function previewImage(event) {
-      const reader = new FileReader();
-      reader.onload = function(){
-        document.getElementById("profile-pic").src = reader.result;
-      }
-      reader.readAsDataURL(event.target.files[0]);
-    }
-            </script>
+            </div>
             <div class="about-text">
                 <h2>
                     About
@@ -158,6 +130,51 @@
                 <li>
                     🧩 Mini Projects Section: Real-time demos of small-scale projects
                 </li>
+            </div>
+        </section>
+        <section>
+            <div class="services" id="services">
+                <div class="container">
+                    <h1 class="sub-title">
+                        My
+                        <span>services</span>
+                    </h1>
+                    <div class="services-list">
+                        <div>
+                            <i class="bx bx-code" style="color: #d003f4"></i>
+                            <h2>UI/UX Design</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                quisquam cupiditate nulla autem possimus corporis blanditiis
+                quidem voluptatibus! Nulla at fugit recusandae ullam eum dolorum
+                quod adipisci tempora cum animi!
+                            </p>
+                            <a href="#" class="read">learn more</a>
+                        </div>
+                        <div>
+                            <i class="bx bx-crop" style="color: #d003f4"></i>
+                            <h2>UI/UX Design</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                quisquam cupiditate nulla autem possimus corporis blanditiis
+                quidem voluptatibus! Nulla at fugit recusandae ullam eum dolorum
+                quod adipisci tempora cum animi!
+                            </p>
+                            <a href="#" class="read">learn more</a>
+                        </div>
+                        <div>
+                            <i class="bx bx-apple" style="color: #d003f4"></i>
+                            <h2>UI/UX Design</h2>
+                            <p>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Alias
+                quisquam cupiditate nulla autem possimus corporis blanditiis
+                quidem voluptatibus! Nulla at fugit recusandae ullam eum dolorum
+                quod adipisci tempora cum animi!
+                            </p>
+                            <a href="#" class="read">learn more</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
         <section class="skills-section" id="skills">
@@ -204,26 +221,26 @@
                         </div>
                         <div class="bar">
                             <div class="info">
-                                <span>MySQL - 85%</span>
+                                <span>MySQL - 75%</span>
                             </div>
                             <div class="progress-line mysql">
                                 <span></span>
                             </div>
-                        </div>
-                        <div class="bar">
-                            <div class="info">
-                                <span>Python - 70%</span>
+                            <div class="bar">
+                                <div class="info">
+                                    <span>Python - 80%</span>
+                                </div>
+                                <div class="progress-line python">
+                                    <span></span>
+                                </div>
                             </div>
-                            <div class="progress-line python">
-                                <span></span>
-                            </div>
-                        </div>
-                        <div class="bar">
-                            <div class="info">
-                                <span>Java - 80%</span>
-                            </div>
-                            <div class="progress-line java">
-                                <span></span>
+                            <div class="bar">
+                                <div class="info">
+                                    <span>Java - 85%</span>
+                                </div>
+                                <div class="progress-line java">
+                                    <span></span>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -335,7 +352,7 @@
                     </div>
                     <div class="row" style="padding: 30px;">
                         <img
-                            src="images/image1.jpg"
+                            src="images/graphicsimage.jpg"
                             alt="Project 3"
                             height="300px"
                             width="400px"
@@ -353,11 +370,11 @@
                         </div>
                     </div>
                     <div class="row" style="padding: 30px;">
-                        <img src="images/image2.webp" alt="Project 1" style="height: 300px; width: 400px">
+                        <img src="images/uxdesigne.jpg" alt="Project 1" style="height: 300px; width: 400px">
                         <div class="layer">
-                            <li style="font-size: 17px;">SkillSyncPro</li>
-                            <p style="font-size: 15px;">SkillSyncPro is an AI-powered job matching platform designed to connect job seekers with the right career opportunities. It leverages smart resume analysis and a skill-matching engine to provide accurate job recommendations, making the hiring process faster and more efficient for both candidates and employers.</p>
-                            <a href="projects/SkillSyncPro/index.php">
+                            <li style="font-size: 17px;">Smart Form Validator</li>
+                            <p style="font-size: 15px;">The Form Validation Project is a fully responsive and interactive form handling system designed to validate user input in real-time. This project demonstrates your JavaScript DOM manipulation, error messaging, and user-friendly UX design skills.</p>
+                            <a href="projects/SkillynPro/index.php">
                                 <i class="fa fa-external-link" aria-hidden="true"></i>
                             </a>
                         </div>
@@ -383,7 +400,8 @@
                         📞91+ 8265044456
                     </li>
                     <li>
-                        📍 Beed, Maharashtra
+                        📍
+ Beed,Maharatra
                     </li>
                 </ul>
                 <div class="home-sci">
@@ -423,5 +441,9 @@
             </a>
         </div>
         <script src="script.js"></script>
+        <!-- jQuery -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <!-- Bootstrap JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     </body>
 </html>
